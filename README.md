@@ -134,7 +134,7 @@ Authorization:Bearer $access_token
 
 ## 获取设备接口基础地址
 
-将VSAIS平台基础地址与上述接口获得的 $status->access_url->WEB 中的地址进行拼接，即可获得设备接口的基础地址。其形式一般为：
+将VSAIS平台基础地址与上述接口获得的 $status->access_url->WEB 中的地址进行拼接，即可获得设备接口的基础地址。
 
 ### 设备接口地址: device_base_url
 
