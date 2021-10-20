@@ -1,6 +1,5 @@
 # VSDeeP 客户设备接口说明文档
 
------
 
 为了方便客户管理和操作平台和设备，VSDeeP为客户提供了若干接口，以达到从平台获取信息和直接管理平台上的设备的功能。方便客户将VSDeeP的产品通过VSAIS平台的api接口对接到自有平台。
 
@@ -13,8 +12,6 @@
 https://api.vsais.com
 
 ## 鉴权
-
------
 
 ### 请求地址: 
 
@@ -60,8 +57,6 @@ POST / FORM
 |token_type|Token种类|string|Y|
 
 ## 获取设备信息
-
------
 
 ### 请求地址: 
 
@@ -139,8 +134,6 @@ Authorization:Bearer $access_token
 
 ## 获取设备接口基础地址
 
------
-
 将VSAIS平台基础地址与上述接口获得的 $status->access_url->WEB 中的地址进行拼接，即可获得设备接口的基础地址。其形式一般为：
 
 ### 设备接口地址: device_base_url
@@ -150,8 +143,6 @@ https://api.vsais.com/device/****
 (****一般为7开头的四位数字)
 
 ## 获取设备相机信息
-
------
 
 ### 请求地址: 
 
