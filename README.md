@@ -7,7 +7,7 @@
 
 ## 通用信息
 
-### VSAIS平台 api 基础接口: base_url  (后文中，所有引用前文中出现的值，在其前方加$以标识)
+### VSAIS平台 api 基础接口: base_url
 
 https://api.vsais.com
 
@@ -15,7 +15,7 @@ https://api.vsais.com
 
 ### 请求地址: 
 
-$base_url/api/oauth2/token
+${base_url}/api/oauth2/token
 
 ### 调用方式
 
@@ -47,7 +47,7 @@ POST / FORM
     "status_code": 200
 }
 ```
-#### 返回值说明： ->data
+#### 返回值说明： .data
 |字段名称 |字段说明 |类型|备注 |
 | -------------|:--------------|:--------------|:--------------|
 |access_token|用于访问的Token|string|后续需要使用|
@@ -60,15 +60,15 @@ POST / FORM
 
 ### 请求地址: 
 
-$base_url/api/client/device
+${base_url}/api/client/device
 
 ### 调用方式
 
 GET
 
 ### Headers
-Authorization:Bearer $access_token
-注意 Bearer 后面有一个空格，$access_token为鉴权获得的未过期的Token
+Authorization:Bearer ${access_token}
+注意 Bearer 后面有一个空格，${access_token}为鉴权获得的未过期的Token
 
 ### URL 参数
 
@@ -122,25 +122,26 @@ Authorization:Bearer $access_token
     "status_code": 200
 }
 ```
-#### 重要返回值说明： ->data->items[*]
+#### 重要返回值说明： 
+
+.data.items: array
+
 |字段名称 |字段说明 |类型|备注 |
 | -------------|:--------------|:--------------|:--------------|
 |serial_number|设备VSN编码|string|-|
-|access_token -> rw|访问设备的TOKEN|string|后续需要使用|
-|status -> access_url -> WEB|访问设备的API接口地址|string|后续需要使用|
-|status -> online|设备的在线状态|boolean|-|
-
-注：->代表对json的某一键取值，[*] 代表取某一数组的值
+|access_token.rw|访问设备的TOKEN|string|后续需要使用|
+|status.access_url.WEB|访问设备的API接口地址|string|后续需要使用|
+|status.online|设备的在线状态|boolean|-|
 
 ## 获取设备接口基础地址
 
-将VSAIS平台基础地址与上述接口获得的 $status->access_url->WEB 中的地址进行拼接，即可获得设备接口的基础地址。
+将VSAIS平台基础地址与上述接口获得的 ${status.access_url.WEB} 中的地址进行拼接，即可获得设备接口的基础地址。
 
 ### 设备接口地址: device_base_url
 
-$base_url$status->access_url->WEB
+${base_url}${status.access_url.WEB}
 
-由于$status->access_url->WEB带有"/"，所不需要另加。其一般形式为：
+由于${status.access_url.WEB} 带有"/"，所不需要另加。其一般形式为：
 
 https://api.vsais.com/device/****
 
@@ -150,14 +151,14 @@ https://api.vsais.com/device/****
 
 ### 请求地址: 
 
-$device_base_url/status/camera
+${device_base_url}/status/camera
 
 ### 调用方式
 
 GET
 
 ### Headers
-TOKEN:$access_token->rw
+TOKEN:${access_token.rw}
 
 ### 返回值
 
@@ -185,7 +186,7 @@ TOKEN:$access_token->rw
 }
 ```
 
-#### 结果说明 ->data
+#### 结果说明 .data
 
 键值名称为相机别名，其中包含的相机参数有：
 
