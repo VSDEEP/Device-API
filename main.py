@@ -1,8 +1,6 @@
-import json
 import sys
 import requests
 from hashlib import sha1
-from pprint import pprint
 import json
 # 设置设备的VSN
 
