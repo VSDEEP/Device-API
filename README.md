@@ -7,7 +7,7 @@
 
 ## 通用信息
 
-### VSAIS平台 api 基础接口: base_url  (后文中，所有引用前文中提到的变量，在其前方加$以标识)
+### VSAIS平台 api 基础接口: base_url  (后文中，所有引用前文中出现的值，在其前方加$以标识)
 
 https://api.vsais.com
 
@@ -137,6 +137,10 @@ Authorization:Bearer $access_token
 将VSAIS平台基础地址与上述接口获得的 $status->access_url->WEB 中的地址进行拼接，即可获得设备接口的基础地址。其形式一般为：
 
 ### 设备接口地址: device_base_url
+
+$base_url$status->access_url->WEB
+
+由于$status->access_url->WEB带有"/"，所不需要另加。其一般形式为：
 
 https://api.vsais.com/device/****
 
