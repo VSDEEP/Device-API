@@ -196,7 +196,7 @@ TOKEN:${access_token.rw}
 
 |字段名称 |字段说明 |类型|备注 |
 | -------------|:--------------|:--------------|:--------------|
-|type|相机类型|string|camera(单相机) 或 group(相机序列)|
+|type|相机类型|string|camera(单相机), group(相机序列), usb(USB相机*)|
 |available|相机可用性|boolean|相机是否可以获取正常图片|
 |color|是否为彩色图片|boolean|-|
 |width|宽|int|-|
@@ -210,6 +210,7 @@ TOKEN:${access_token.rw}
 |camera_model|相机型号|string|通过Onvif获取的相机型号|
 |time|彼时的时间戳|string|处理该相机时的Unix时间戳，精确到秒|
 
+注* USB相机下，只有time这一个字段
 
 ## 修订记录
 
