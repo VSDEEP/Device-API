@@ -171,6 +171,7 @@ TOKEN:${access_token.rw}
     "is_successful":true,
     "data":{
         "相机测试":{
+            "capability": ["无感考勤", "安全帽识别"],
             "type":"camera",
             "available":true,
             "color":false,
@@ -196,6 +197,7 @@ TOKEN:${access_token.rw}
 
 |字段名称 |字段说明 |类型|备注 |
 | -------------|:--------------|:--------------|:--------------|
+|capability|相机能力|list|相机绑定的算法能力|
 |type|相机类型|string|camera(单相机), group(相机序列), usb(USB相机*)|
 |available|相机可用性|boolean|相机是否可以获取正常图片|
 |color|是否为彩色图片|boolean|-|
