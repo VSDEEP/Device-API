@@ -194,23 +194,24 @@ TOKEN:${access_token.rw}
 #### 结果说明 .data
 
 键值名称为相机别名，其中包含的相机参数有：
-
-|字段名称 |字段说明 |类型|备注 |
-| -------------|:--------------|:--------------|:--------------|
-|capability|相机能力|list|相机绑定的算法能力|
-|type|相机类型|string|camera(单相机), group(相机序列), usb(USB相机*)|
-|available|相机可用性|boolean|相机是否可以获取正常图片|
-|color|是否为彩色图片|boolean|-|
-|width|宽|int|-|
-|height|高|int|-|
-|process_time|获取图片耗时|float|-|
-|ping_rtt|ping相机IP地址（1450bytes）的返回时间|float|以小包ping相机，检查一遍连通性|
-|ping_large_rtt|ping相机IP地址（1450bytes）的返回时间|float|以大包ping相机，检查大流量连通性|
-|detail|图像细节|int|越大内容越丰富，如果过小（小于2），则画面可能起雾或者看向不正确的方向|
-|camera_brand|相机品牌|string|通过Onvif获取的相机品牌|
-|camera_sn|相机序列号|string|通过Onvif获取的相机序列号，可后期任意修改|
-|camera_model|相机型号|string|通过Onvif获取的相机型号|
-|time|彼时的时间戳|string|处理该相机时的Unix时间戳，精确到秒|
+| 字段名称           | 字段说明                       | 类型                  | 备注                                    |
+|----------------|:---------------------------|:--------------------|:--------------------------------------|
+| capability     | 相机能力                       | list                | 相机绑定的算法能力                             |
+| type           | 相机类型                       | string              | camera(单相机), group(相机序列), usb(USB相机*) |
+| available      | 相机可用性                      | boolean             | 相机是否可以获取正常图片                          |
+| color          | 是否为彩色图片                    | boolean             | -                                     |
+| width          | 宽                          | int                 | -                                     |
+| height         | 高                          | int                 | -                                     |
+| process_time   | 获取图片耗时                     | float               | -                                     |
+| ping_rtt       | ping相机IP地址（1450bytes）的返回时间 | float               | 以小包ping相机，检查一遍连通性                     |
+| ping_large_rtt | ping相机IP地址（1450bytes）的返回时间 | float               | 以大包ping相机，检查大流量连通性                    |
+| detail         | 图像细节                       | int                 | 越大内容越丰富，如果过小（小于2），则画面可能起雾或者看向不正确的方向   |
+| camera_brand   | 相机品牌                       | string              | 通过Onvif获取的相机品牌                        |
+| camera_sn      | 相机序列号                      | string              | 通过Onvif获取的相机序列号，可后期任意修改               |
+| camera_model   | 相机型号                       | string              | 通过Onvif获取的相机型号                        |
+| time           | 彼时的时间戳                     | string              | 处理该相机时的Unix时间戳，精确到秒                   |
+| preview        | 预览图片的url链接                 | string                     |  |
+| preview_video  | 预览视频的url链接                 | string              |                    |
 
 注* USB相机下，只有time这一个字段
 
